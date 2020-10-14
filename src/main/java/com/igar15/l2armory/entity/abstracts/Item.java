@@ -1,5 +1,6 @@
-package com.igar15.l2armory.entity;
+package com.igar15.l2armory.entity.abstracts;
 
+import com.igar15.l2armory.entity.abstracts.AbstractNamedEntity;
 import lombok.Data;
 
 import javax.persistence.Column;

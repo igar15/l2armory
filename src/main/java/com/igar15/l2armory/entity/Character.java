@@ -1,7 +1,9 @@
 package com.igar15.l2armory.entity;
 
+import com.igar15.l2armory.entity.abstracts.AbstractNamedEntity;
+import com.igar15.l2armory.entity.enums.Race;
+import com.igar15.l2armory.entity.enums.Sex;
 import lombok.Data;
-import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 

@@ -1,5 +1,8 @@
 package com.igar15.l2armory.entity;
 
+import com.igar15.l2armory.entity.abstracts.GradeItem;
+import com.igar15.l2armory.entity.enums.WeaponAttackSpeed;
+import com.igar15.l2armory.entity.enums.WeaponType;
 import lombok.Data;
 
 import javax.persistence.*;

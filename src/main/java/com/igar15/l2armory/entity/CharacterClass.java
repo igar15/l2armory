@@ -1,10 +1,10 @@
 package com.igar15.l2armory.entity;
 
+import com.igar15.l2armory.entity.abstracts.AbstractNamedEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "character_class")

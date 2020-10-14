@@ -1,5 +1,6 @@
-package com.igar15.l2armory.entity;
+package com.igar15.l2armory.entity.abstracts;
 
+import com.igar15.l2armory.entity.enums.Grade;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -9,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 @Data
-public class GradeItem extends Item {
+public abstract class GradeItem extends Item {
 
     @Column(name = "grade")
     @Enumerated(EnumType.STRING)
