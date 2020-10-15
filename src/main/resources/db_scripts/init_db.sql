@@ -18,7 +18,8 @@ create sequence global_seq start with 100;
 create table character_class (
     id integer primary key default nextval('global_seq'),
     name varchar not null,
-    description varchar not null
+    description varchar not null,
+    image_url varchar not null
 );
 create unique index character_class_unique_name_idx on character_class (name);
 

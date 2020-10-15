@@ -15,6 +15,9 @@ public class CharacterClass extends AbstractNamedEntity {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "characterClass")
 //    private List<Character> characters;
 
