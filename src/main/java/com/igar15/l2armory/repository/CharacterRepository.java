@@ -19,5 +19,8 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
     Page<Character> findAll(Pageable pageable);
 
     @EntityGraph(attributePaths = "characterClass")
-    Page<Character> findAllByCharacterClassName(@Param("className") String className, Pageable pageable);
+    Page<Character> findAllByCharacterClassId(@Param("id") Long id, Pageable pageable);
+
+    @EntityGraph(attributePaths = "characterClass")
+    Page<Character> findAllByNameContainingIgnoreCase(@Param("name") String name, Pageable pageable);
 }
