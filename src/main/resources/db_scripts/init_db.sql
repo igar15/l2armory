@@ -10,7 +10,7 @@ drop table if exists helmet;
 drop table if exists shield;
 drop table if exists ring;
 drop table if exists necklace;
-drop table if exists earning;
+drop table if exists earring;
 drop sequence if exists global_seq;
 
 create sequence global_seq start with 100;
@@ -159,7 +159,7 @@ create table necklace (
 );
 create unique index necklace_unique_name_idx on necklace (name);
 
-create table earning (
+create table earring (
     id integer primary key default nextval('global_seq'),
     name varchar not null,
     weight integer not null,
@@ -171,7 +171,7 @@ create table earning (
     mp_bonus integer not null,
     bonus varchar default null
 );
-create unique index earning_unique_name_idx on earning (name);
+create unique index earring_unique_name_idx on earring (name);
 
 create table equipment (
     id integer primary key default nextval('global_seq'),
@@ -186,8 +186,8 @@ create table equipment (
     ring1_id integer default null,
     ring2_id integer default null,
     necklace_id integer default null,
-    earning1_id integer default null,
-    earning2_id integer default null,
+    earring1_id integer default null,
+    earring2_id integer default null,
     foreign key (character_id) references character (id),
     foreign key (weapon_id) references weapon (id),
     foreign key (chest_id) references chest (id),
@@ -199,8 +199,8 @@ create table equipment (
     foreign key (ring1_id) references ring (id),
     foreign key (ring2_id) references ring (id),
     foreign key (necklace_id) references necklace (id),
-    foreign key (earning1_id) references earning (id),
-    foreign key (earning2_id) references earning (id)
+    foreign key (earring1_id) references earring (id),
+    foreign key (earring2_id) references earring (id)
 );
 create unique index equipment_unique_character_id_idx on equipment (character_id);
 

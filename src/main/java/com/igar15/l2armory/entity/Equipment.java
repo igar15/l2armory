@@ -55,11 +55,11 @@ public class Equipment extends AbstractBaseEntity {
     private Necklace necklace;
 
     @ManyToOne
-    @JoinColumn(name = "earning1_id")
-    private Earning earning1;
+    @JoinColumn(name = "earring1_id")
+    private Earring earring1;
 
     @ManyToOne
-    @JoinColumn(name = "earning2_id")
-    private Earning earning2;
+    @JoinColumn(name = "earring2_id")
+    private Earring earring2;
 
 }

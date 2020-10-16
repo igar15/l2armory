@@ -39,7 +39,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(config, theUnsupportedActions, Chest.class);
 
         // disable HTTP methods for Earning: POST, PUT, DELETE
-        disableHttpMethods(config, theUnsupportedActions, Earning.class);
+        disableHttpMethods(config, theUnsupportedActions, Earring.class);
 
         // disable HTTP methods for Equipment: POST, PUT, DELETE
         disableHttpMethods(config, theUnsupportedActions, Equipment.class);

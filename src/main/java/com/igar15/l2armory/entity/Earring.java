@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "earning")
+@Table(name = "earring")
 @Data
-public class Earning extends Accessory {
+public class Earring extends Accessory {
 }

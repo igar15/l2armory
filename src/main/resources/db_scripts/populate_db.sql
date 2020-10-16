@@ -10,7 +10,7 @@ delete from helmet;
 delete from shield;
 delete from ring;
 delete from necklace;
-delete from earning;
+delete from earring;
 alter sequence global_seq restart with 100;
 
 insert into character_class (name, description, image_url)
@@ -74,7 +74,7 @@ values ('Bow of Peril', 1700, 13100000, 'assets/images/weapon/bows/bow-of-peril.
        ('Light Bow', 1810, 1800000, 'assets/images/weapon/bows/light-bow.png', 'D', 191, 54, 'LOW', 2, 1, 'BOW'),
        ('Art of Battle Axe', 1570, 13100000, 'assets/images/weapon/blunts/art-of-battle-axe.png', 'B', 194, 99, 'HIGH', 2, 2, 'BLUNT'),
        ('Spirit Sword', 1420, 2870000, 'assets/images/weapon/swords/spirit-sword.png', 'C', 122, 68, 'HIGH', 1, 1, 'SWORD'),
-       ('Saber*Saber', 2530, 877000, 'assets/images/weapon/dual_swords/saber*saber.png', 'D', 73, 37, 'NORMAL', 1, 1, 'DUAL_SWORDS'),
+       ('Saber*Saber', 2530, 877000, 'assets/images/weapon/dual_swords/saber-saber.png', 'D', 73, 37, 'NORMAL', 1, 1, 'DUAL_SWORDS'),
        ('Damascus', 1350, 13100000, 'assets/images/weapon/swords/damascus.png', 'B', 194, 99, 'HIGH', 2, 2, 'SWORD'),
        ('Dark Screamer', 1010, 4300000, 'assets/images/weapon/daggers/dark-screamer.png', 'C', 122, 76, 'VERY_HIGH', 1, 1, 'DAGGER'),
        ('Kris', 980, 8680000, 'assets/images/weapon/daggers/kris.png', 'B', 153, 91, 'VERY_HIGH', 2, 2, 'DAGGER');
@@ -136,7 +136,7 @@ insert into ring (name, weight, price, image_url, grade, p_def, m_def, mp_bonus,
 values ('Magic Ring', 150, 2, 'assets/images/armor/ring/magic-ring.png', 'NG', 0, 7, 0, null),
        ('Ring of Seal', 150, 21720, 'assets/images/armor/ring/ring-of-seal.png', 'C', 0, 32, 0, null),
        ('Black Ore Ring', 150, 47400, 'assets/images/armor/ring/black-ore-ring.png', 'B', 0, 40, 0, null),
-       ('Majestic Ring', 150, 499500, 'assets/images/armor/ring/black-ore-ring.png', 'A', 0, 47, 17, null),
+       ('Majestic Ring', 150, 499500, 'assets/images/armor/ring/majestic-ring.png', 'A', 0, 47, 17, null),
        ('Baium''s Ring Lv. 3', 150, 8000000000, 'assets/images/armor/ring/baium-ring-lv.-3.png', 'NG', 0, 56, 27, 'MP +27, Stun Resistance/ Atk. Rate +20%, Bleed Resistance/ Atk. Rate +15%, P./ M. Accuracy +4, Atk. Spd./ Casting Spd. +5%, P./ M. Skill Power +10%, P. Critical Damage +15%, M. Critical Damage +10%. The effect does not stack if two identical rings are equipped. Cannot be enchanted. If you take 2 these rings to Baggins in Town of Giran, you can change them for Essence of Baium.'),
        ('Ring of Core Lv. 3', 150, 700000000, 'assets/images/armor/ring/ring-of-core-lv.-3.png', 'NG', 0, 48, 21, 'MP +21, Mental Resistance and Atk. Rate +20%, P./ M. Evasion +3, Received Damage -6%. Enables to use a special ability to remove debuffs. The effect doesn''t stack if two identical rings are worn. Cannot be enchanted. If you take 2 these rings to Baggins in Town of Giran, you can change them for Essence of Core.'),
        ('Queen Ant''s Ring Lv. 3', 150, 2000000000, 'assets/images/armor/ring/queen-ant-ring-lv.-3.png', 'NG', 0, 48, 21, 'MP +21, Poison Resistance and Atk. Rate +20%, P./ M. Accuracy +3, P./ M. Atk. +7%, P. Critical Damage +10%, M. Critical Damage +5%. The effect doesn''t stack if two identical rings are worn. Cannot be enchanted. If you take 2 these rings to Baggins in Town of Giran, you can change them for Essence of Queen Ant.');
@@ -148,13 +148,13 @@ values ('Necklace of Knowledge', 150, 83, 'assets/images/armor/necklace/necklace
        ('Majestic Necklace', 150, 999000, 'assets/images/armor/necklace/majestic-necklace.png', 'A', 0, 85, 33, null),
        ('Frintezza''s Necklace Lv. 1', 150, 1500000000, 'assets/images/armor/necklace/frintezza-necklace-lv.-1.png', 'NG', 0, 83, 29, 'MP +29, Sleep Resistance/ Atk. Rate +10%, Paralysis Resistance/ Atk. Rate +5%, Skill Cooldown -2%, Damage Reflection Resistance +2%, P./ M. Skill Power +5%. Cannot be enchanted.');
 
-insert into earning (name, weight, price, image_url, grade, p_def, m_def, mp_bonus, bonus)
-values ('Coral Earring', 150, 1230, 'assets/images/armor/earning/coral-earning.png', 'NG', 0, 21, 0, null),
-       ('Earring of Protection', 150, 15050, 'assets/images/armor/earning/earning-of-protection.png', 'C', 0, 42, 0, null),
-       ('Black Ore Earring', 150, 71100, 'assets/images/armor/earning/black-ore-earning.png', 'B', 0, 54, 0, null),
-       ('Orfen''s Earring Lv. 3', 150, 2030000000, 'assets/images/armor/earning/orfen-earning-lv.-3.png', 'NG', 0, 71, 31, 'MP +31, Mental Resistance/ Atk. Rate +15%, Hold Resistance/ Atk. Rate +20%, Received Healing +6%, Skill MP Consumption -5%. Has a chance of absorbing 3% of the inflicted damage as MP. The effect doesn''t stack if two identical earrings are equipped. Cannot be enchanted. If you take 2 of these rings to Blacksmith Baggins in Giran, you can exchange them for the Essence of Orfen.');
+insert into earring (name, weight, price, image_url, grade, p_def, m_def, mp_bonus, bonus)
+values ('Coral Earring', 150, 1230, 'assets/images/armor/earring/coral-earring.png', 'NG', 0, 21, 0, null),
+       ('Earring of Protection', 150, 15050, 'assets/images/armor/earring/earring-of-protection.png', 'C', 0, 42, 0, null),
+       ('Black Ore Earring', 150, 71100, 'assets/images/armor/earring/black-ore-earring.png', 'B', 0, 54, 0, null),
+       ('Orfen''s Earring Lv. 3', 150, 2030000000, 'assets/images/armor/earring/orfen-earring-lv.-3.png', 'NG', 0, 71, 31, 'MP +31, Mental Resistance/ Atk. Rate +15%, Hold Resistance/ Atk. Rate +20%, Received Healing +6%, Skill MP Consumption -5%. Has a chance of absorbing 3% of the inflicted damage as MP. The effect doesn''t stack if two identical earrings are equipped. Cannot be enchanted. If you take 2 of these rings to Blacksmith Baggins in Giran, you can exchange them for the Essence of Orfen.');
 
-insert into equipment (character_id, weapon_id, chest_id, legs_id, boots_id, gloves_id, helmet_id, shield_id, ring1_id, ring2_id, necklace_id, earning1_id, earning2_id)
+insert into equipment (character_id, weapon_id, chest_id, legs_id, boots_id, gloves_id, helmet_id, shield_id, ring1_id, ring2_id, necklace_id, earring1_id, earring2_id)
 values (131, 152, 168, 160, 176, 184, 192, null, 205, 207, 212, 215, 216),
        (132, 154, 175, 167, 183, 191, 198, 199, 203, 203, 211, 215, 215),
        (133, 155, 174, 166, 182, 190, 197, 199, 203, 203, 211, 215, 215),
