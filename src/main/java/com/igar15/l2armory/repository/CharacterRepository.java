@@ -1,7 +1,7 @@
 package com.igar15.l2armory.repository;
 
 import com.igar15.l2armory.entity.Character;
-import com.igar15.l2armory.entity.InLineCharacterClass;
+import com.igar15.l2armory.entity.CharacterProjection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@RepositoryRestResource(excerptProjection = InLineCharacterClass.class)
+//@RepositoryRestResource(excerptProjection = CharacterProjection.class)
 @CrossOrigin("http://localhost:4200")
 public interface CharacterRepository extends JpaRepository<Character, Long> {
 

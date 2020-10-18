@@ -5,6 +5,7 @@ import com.igar15.l2armory.entity.enums.WeaponAttackSpeed;
 import com.igar15.l2armory.entity.enums.WeaponType;
 import lombok.Data;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 
 @Entity
@@ -31,4 +32,5 @@ public class Weapon extends GradeItem {
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private WeaponType type;
+
 }
