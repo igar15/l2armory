@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 // this annotation below hides this repository
 //@RepositoryRestResource(exported = false)
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin()
 public interface BootsRepository extends JpaRepository<Boots, Long> {
 }
 

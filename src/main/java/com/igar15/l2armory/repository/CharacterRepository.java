@@ -11,7 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 //@RepositoryRestResource(excerptProjection = CharacterProjection.class)
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin()
 public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     // override this method from PagingAndSorting interface -> add @EntityGraph to avoid (N+1) select issue

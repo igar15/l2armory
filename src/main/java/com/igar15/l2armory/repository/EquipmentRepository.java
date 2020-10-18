@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin()
 public interface EquipmentRepository extends JpaRepository<Equipment, Long> {
 
     @Query(value = "select e from Equipment e left join fetch e.character c left join fetch c.characterClass left join fetch e.boots",
