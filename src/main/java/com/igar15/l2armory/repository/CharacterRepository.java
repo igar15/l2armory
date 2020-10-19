@@ -16,12 +16,12 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     // override this method from PagingAndSorting interface -> add @EntityGraph to avoid (N+1) select issue
     @EntityGraph(attributePaths = "characterClass")
-    Page<Character> findAll(Pageable pageable);
+    Page<Character> findAllByServerId(@Param("serverId") Long serverId, Pageable pageable);
 
     @EntityGraph(attributePaths = "characterClass")
-    Page<Character> findAllByCharacterClassId(@Param("id") Long id, Pageable pageable);
+    Page<Character> findAllByServerIdAndCharacterClassId(@Param("serverId") Long serverId, @Param("id") Long id, Pageable pageable);
 
     @EntityGraph(attributePaths = "characterClass")
-    Page<Character> findAllByNameContainingIgnoreCase(@Param("name") String name, Pageable pageable);
+    Page<Character> findAllByServerIdAndNameContainingIgnoreCase(@Param("serverId") Long serverId, @Param("name") String name, Pageable pageable);
 
 }

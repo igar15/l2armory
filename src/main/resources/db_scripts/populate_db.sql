@@ -15,11 +15,11 @@ delete from earring;
 alter sequence global_seq restart with 100;
 
 insert into server (name)
-values ('Gran Kain'),
+values ('Anakim'),
        ('Shillien'),
        ('Einhasad'),
        ('Paagrio'),
-       ('Anakim'),
+       ('Gran Kain'),
        ('Lilit');
 
 insert into character_class (name, description, image_url)
