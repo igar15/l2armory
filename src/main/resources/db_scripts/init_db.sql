@@ -1,5 +1,6 @@
 drop table if exists equipment;
 drop table if exists character;
+drop table if exists server;
 drop table if exists character_class;
 drop table if exists weapon;
 drop table if exists legs;
@@ -14,6 +15,12 @@ drop table if exists earring;
 drop sequence if exists global_seq;
 
 create sequence global_seq start with 100;
+
+create table server (
+    id integer primary key default nextval('global_seq'),
+    name varchar not null
+);
+create unique index server_unique_name_idx on server (name);
 
 create table character_class (
     id integer primary key default nextval('global_seq'),
@@ -30,9 +37,11 @@ create table character (
     race varchar not null,
     sex varchar not null,
     class_id integer not null,
-    foreign key (class_id) references character_class (id)
+    server_id integer not null,
+    foreign key (class_id) references character_class (id),
+    foreign key (server_id) references server (id)
 );
-create unique index character_unique_name_idx on character (name);
+create unique index character_unique_name_server_id_idx on character (name, server_id);
 
 create table weapon (
     id integer primary key default nextval('global_seq'),

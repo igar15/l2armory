@@ -27,4 +27,8 @@ public class Character extends AbstractNamedEntity {
     @JoinColumn(name = "class_id")
     private CharacterClass characterClass;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "server_id")
+    private Server server;
+
 }

@@ -32,6 +32,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         // disable HTTP methods for Character: POST, PUT, DELETE
         disableHttpMethods(config, theUnsupportedActions, Character.class);
 
+        // disable HTTP methods for Character: POST, PUT, DELETE
+        disableHttpMethods(config, theUnsupportedActions, Server.class);
+
         // disable HTTP methods for Boots: POST, PUT, DELETE
         disableHttpMethods(config, theUnsupportedActions, Boots.class);
 

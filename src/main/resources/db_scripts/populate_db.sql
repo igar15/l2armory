@@ -1,5 +1,6 @@
 delete from equipment;
 delete from character;
+delete from server;
 delete from character_class;
 delete from weapon;
 delete from legs;
@@ -12,6 +13,14 @@ delete from ring;
 delete from necklace;
 delete from earring;
 alter sequence global_seq restart with 100;
+
+insert into server (name)
+values ('Gran Kain'),
+       ('Shillien'),
+       ('Einhasad'),
+       ('Paagrio'),
+       ('Anakim'),
+       ('Lilit');
 
 insert into character_class (name, description, image_url)
 values ('Paladin', 'The Paladin is a tank that sustains great damage by healing itself through white magic and holy blessings, and maintains a hate aura to protect itself and fellow party members.', 'assets/images/class/paladin.png'),
@@ -46,25 +55,25 @@ values ('Paladin', 'The Paladin is a tank that sustains great damage by healing 
        ('Swordsinger', 'The Sword Singer has a beautiful voice that is used to raise the morale of party members and assist them in battle. The Sword Singer helps to recover the physical strength of party members through Song of Life and raises the defensive power of party members using Song of Earth. The sound of the Sword Singer''s voice is welcome in any party.', 'assets/images/class/swordsinger.png'),
        ('Bladedancer', 'The Bladedancer primarily uses dual swords and raises the abilities of party members by dancing. They assist in the hunt by increasing the attack power of party members through the Dance of Warrior. The Bladedancer also raises the critical damage of party members through Dance of Fire.', 'assets/images/class/bladedancer.png');
 
-insert into character (name, level, race, sex, class_id)
-values ('Furer', 80, 'HUMAN', 'MALE', 123),
-       ('DrCanabys', 79, 'ORC', 'MALE', 127),
-       ('PrivatePP', 77, 'HUMAN', 'MALE', 126),
-       ('BlackBD', 78, 'DARK_ELF', 'FEMALE', 130),
-       ('SwSiha', 78, 'ELF', 'FEMALE', 129),
-       ('SuperEE', 79, 'ELF', 'FEMALE', 121),
-       ('MrCat', 77, 'HUMAN', 'MALE', 114),
-       ('CyberPunk', 78, 'DARK_ELF', 'MALE', 119),
-       ('Hyper', 78, 'HUMAN', 'MALE', 123),
-       ('MegaHawk', 72, 'HUMAN', 'MALE', 123),
-       ('BlackHawk', 60, 'HUMAN', 'MALE', 123),
-       ('Nagibator777', 41, 'HUMAN', 'MALE', 123),
-       ('xxxHawKxxx', 71, 'HUMAN', 'MALE', 123),
-       ('zKing', 80, 'HUMAN', 'MALE', 123),
-       ('imbaHawk', 80, 'HUMAN', 'MALE', 123),
-       ('Best', 69, 'HUMAN', 'MALE', 123),
-       ('MegaLord', 34, 'HUMAN', 'MALE', 123),
-       ('Killer', 15, 'HUMAN', 'MALE', 123);
+insert into character (name, level, race, sex, class_id, server_id)
+values ('Furer', 80, 'HUMAN', 'MALE', 129, 102),
+       ('DrCanabys', 79, 'ORC', 'MALE', 133, 102),
+       ('PrivatePP', 77, 'HUMAN', 'MALE', 132, 102),
+       ('BlackBD', 78, 'DARK_ELF', 'FEMALE', 136, 102),
+       ('SwSiha', 78, 'ELF', 'FEMALE', 135, 102),
+       ('SuperEE', 79, 'ELF', 'FEMALE', 127, 102),
+       ('MrCat', 77, 'HUMAN', 'MALE', 120, 102),
+       ('CyberPunk', 78, 'DARK_ELF', 'MALE', 125, 102),
+       ('Hyper', 78, 'HUMAN', 'MALE', 129, 102),
+       ('MegaHawk', 72, 'HUMAN', 'MALE', 129, 102),
+       ('BlackHawk', 60, 'HUMAN', 'MALE', 129, 102),
+       ('Nagibator777', 41, 'HUMAN', 'MALE', 129, 102),
+       ('xxxHawKxxx', 71, 'HUMAN', 'MALE', 129, 102),
+       ('zKing', 80, 'HUMAN', 'MALE', 129, 102),
+       ('imbaHawk', 80, 'HUMAN', 'MALE', 129, 102),
+       ('Best', 69, 'HUMAN', 'MALE', 129, 102),
+       ('MegaLord', 34, 'HUMAN', 'MALE', 129, 102),
+       ('Killer', 15, 'HUMAN', 'MALE', 129, 102);
 
 insert into weapon (name, weight, price, image_url, grade, p_atk, m_atk, attack_speed, soulshots_consume, spiritshots_consume, type)
 values ('Bow of Peril', 1700, 13100000, 'assets/images/weapon/bows/bow-of-peril.png', 'B', 400, 99, 'LOW', 3, 2, 'BOW'),
@@ -155,21 +164,21 @@ values ('Coral Earring', 150, 1230, 'assets/images/armor/earring/coral-earring.p
        ('Orfen''s Earring Lv. 3', 150, 2030000000, 'assets/images/armor/earring/orfen-earring-lv.-3.png', 'NG', 0, 71, 31, 'MP +31, Mental Resistance/ Atk. Rate +15%, Hold Resistance/ Atk. Rate +20%, Received Healing +6%, Skill MP Consumption -5%. Has a chance of absorbing 3% of the inflicted damage as MP. The effect doesn''t stack if two identical earrings are equipped. Cannot be enchanted. If you take 2 of these rings to Blacksmith Baggins in Giran, you can exchange them for the Essence of Orfen.');
 
 insert into equipment (character_id, weapon_id, chest_id, legs_id, boots_id, gloves_id, helmet_id, shield_id, ring1_id, ring2_id, necklace_id, earring1_id, earring2_id)
-values (131, 152, 168, 160, 176, 184, 192, null, 205, 207, 212, 215, 216),
-       (132, 154, 175, 167, 183, 191, 198, 199, 203, 203, 211, 215, 215),
-       (133, 155, 174, 166, 182, 190, 197, 199, 203, 203, 211, 215, 215),
-       (134, 156, 169, 161, 177, 185, 193, null, 204, 204, 211, 215, 215),
-       (135, 157, 169, 161, 177, 185, 193, 199, 204, 204, 211, 215, 215),
-       (136, 155, 175, 167, 183, 191, 198, 199, 202, 204, 211, 215, 215),
-       (137, 158, 170, 162, 178, 186, 196, 200, 202, 204, 211, 214, 214),
-       (138, 159, 172, 164, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (139, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (140, 151, 173, 165, 178, 186, 196, null, 203, 204, 209, 214, 214),
-       (141, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (142, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (143, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (144, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (145, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (146, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (147, 149, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214),
-       (148, 153, 173, 165, 180, 188, 192, null, 202, 204, 211, 215, 214);
+values (137, 158, 174, 166, 182, 190, 198, null, 211, 213, 218, 221, 222),
+       (138, 160, 181, 173, 189, 197, 198, 205, 209, 209, 217, 221, 221),
+       (139, 161, 180, 172, 188, 196, 203, 205, 209, 209, 217, 221, 221),
+       (140, 162, 175, 167, 183, 191, 199, null, 210, 210, 217, 221, 221),
+       (141, 163, 175, 167, 183, 191, 199, 205, 210, 210, 217, 221, 221),
+       (142, 161, 181, 173, 189, 197, 204, 205, 208, 210, 217, 221, 221),
+       (143, 164, 176, 168, 184, 192, 202, 206, 208, 210, 217, 220, 220),
+       (144, 165, 178, 170, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (145, 156, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (146, 157, 179, 171, 184, 192, 202, null, 209, 210, 215, 220, 220),
+       (147, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (148, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (149, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (150, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (151, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (152, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (153, 155, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220),
+       (154, 159, 179, 171, 186, 194, 198, null, 208, 210, 217, 221, 220);
